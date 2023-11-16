@@ -50,6 +50,9 @@ class ViewController: UIViewController {
     
     private func log(text: String) -> Void {
         historyTextView.text += "[\(getCurrentDate())]: \(text)\n"
+        
+        let range = NSRange(location: historyTextView.text.count - 1, length: 0)
+        historyTextView.scrollRangeToVisible(range)
     }
     
     private func getCurrentDate() -> String {
