@@ -8,32 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var resetButton: UIButton!
-    
-    @IBOutlet weak var counterLabel: UILabel!
-    
-    @IBOutlet weak var decrementButton: UIButton!
-    @IBOutlet weak var incrementButton: UIButton!
-    
-    @IBOutlet weak var historyTextView: UITextView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         historyTextView.text = "История изменения:\n"
-    }
-
-    @IBAction func resetButtonDidTap() {
-        reset()
-    }
-    
-    @IBAction func decrementButtonDidTap() {
-        decrement()
-    }
-    
-    @IBAction func incrementButtonDidTap() {
-        increment()
     }
     
     private var counter: Int = 0
@@ -82,6 +60,25 @@ class ViewController: UIViewController {
         let formattedDate = dateFormatter.string(from: currentDate)
         
         return formattedDate
+    }
+    
+    @IBOutlet private weak var resetButton: UIButton!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var decrementButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
+
+    @IBOutlet private weak var historyTextView: UITextView!
+    
+    @IBAction private func resetButtonDidTap() {
+        reset()
+    }
+    
+    @IBAction private func decrementButtonDidTap() {
+        decrement()
+    }
+    
+    @IBAction private func incrementButtonDidTap() {
+        increment()
     }
 }
 
